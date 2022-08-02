@@ -33,6 +33,9 @@ INSTALLED_APPS = [
     'rest_framework'
 ]
 
+# * Specifies which kind of user models you are going to use or the kind of custom user model that you are going to use.
+AUTH_USER_MODEL = 'authentication.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
