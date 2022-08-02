@@ -7,7 +7,7 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.base_user import BaseUserManager
 # * imported for email validation
 from django.utils.translation import ugettext_lazy as _
-
+from phonenumber_field.modelfields import PhoneNumberField
 
 class CustomUserManager(BaseUserManager): 
     # * Overwriting the [create_user, create_superuser] methods
@@ -43,6 +43,16 @@ class CustomUserManager(BaseUserManager):
     
 
 class User(AbstractUser):
-    username = models.CharField(max_length=30, unique=True)
-    Email    = models.EmailField(max_length = 120, unique = True)
+    username       = models.CharField(max_length=30, unique=True)
+    Email          = models.EmailField(max_length = 120, unique = True)
+    phone_number   = PhoneNumberField(null  = False, unique = True)
+    
+    # * will be use to log in
+    USERNAME_FIELD = 'email'
+
+    # * will be required in case we are sign up a user.
+    REQUIRED_FIELDS = ['username', 'phone_number']
+
+    def __str__(self):
+        return f"<user {self.email}"
         
