@@ -23,6 +23,7 @@ class Order(models.Model):
         ('LEXUS', 'lexus'),
         ('PORSHE', 'porshe'),
         ('BUGATTI', 'bugatti'),
+        ('NISSAN', 'nissan'),
     )
     
     ORDER_STATUS = (
