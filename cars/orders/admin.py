@@ -7,4 +7,6 @@ from .models import Order
 
 class OrderAdmin(admin.ModelAdmin):
     # * list of things you want to display.
-    list_display = ['brand', 'order_status', 'quantity']
+    list_display = ['brand', 'order_status', 'quantity', 'created_at']
+    # * filtering in the {django} administration
+    list_filter  = ['created_at', 'order_status', 'brand']
