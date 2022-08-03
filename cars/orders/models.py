@@ -21,7 +21,7 @@ class Order(models.Model):
         ('AUDI', 'audi'),
         ('LAND_ROVER', 'landrover'),
         ('LEXUS', 'lexus'),
-        ('PORSHE', 'porshe'),
+        ('PORSCHE', 'porsche'),
         ('BUGATTI', 'bugatti'),
         ('NISSAN', 'nissan'),
         ('JAGUAR', 'jaguar'),
