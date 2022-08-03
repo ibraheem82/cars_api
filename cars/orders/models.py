@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 
 # Create your models here.
 
+
 User = get_user_model()
 
 class Order(models.Model):
@@ -15,6 +16,7 @@ class Order(models.Model):
         ('HONDA', 'honda'),
         ('FORD', 'ford'),
         ('FIAT', 'fiat'),
+        ('BMW', 'bmw'),
         ('JEEP', 'jeep'),
         ('VOLKSWAGEN', 'volkswagen'),
         ('VOLVO', 'volvo'),
