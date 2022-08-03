@@ -1,6 +1,7 @@
-from enum import unique
-from turtle import mode
+# from enum import unique
+# from turtle import mode
 from django.db import models
+
 
 # Create your models here.
 from django.contrib.auth.models import AbstractUser
@@ -43,9 +44,9 @@ class CustomUserManager(BaseUserManager):
     
 
 class User(AbstractUser):
-    username       = models.CharField(max_length=30, unique=True)
-    Email          = models.EmailField(max_length = 120, unique = True)
-    phone_number   = PhoneNumberField(null  = False, unique = True)
+    username       = models.CharField(max_length=30, unique = True)
+    email          = models.EmailField(max_length = 120, unique = True)
+    phone_number   = PhoneNumberField(null = False, unique = True)
     
     # * will be use to log in
     USERNAME_FIELD = 'email'
@@ -54,5 +55,5 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ['username', 'phone_number']
 
     def __str__(self):
-        return f"<user {self.email}"
+        return f"<User {self.email}"
         
