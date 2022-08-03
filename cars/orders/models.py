@@ -25,6 +25,8 @@ class Order(models.Model):
         ('BUGATTI', 'bugatti'),
         ('NISSAN', 'nissan'),
         ('JAGUAR', 'jaguar'),
+        ('BENTLEY', 'bentley'),
+        
         
     )
     
