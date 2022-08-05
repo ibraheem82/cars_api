@@ -53,6 +53,10 @@ class User(AbstractUser):
 
     # * will be required in case we are sign up a user.
     REQUIRED_FIELDS = ['username', 'phone_number']
+    
+    
+    # * After doing this you can successfully create the custom user manager
+    objects = CustomUserManager
 
     def __str__(self):
         return f"<User {self.email}"
