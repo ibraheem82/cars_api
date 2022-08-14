@@ -6,8 +6,8 @@ from rest_framework import serializers
 from phonenumber_field.serializerfields import PhoneNumberField
 
 class UserCreationSerializer(serializers.ModelSerializer):
-    username       = serializers.CharField(max_length=30, unique = True)
-    email          = serializers.EmailField(max_length = 120, unique = True)
+    username       = serializers.CharField(max_length=30)
+    email          = serializers.EmailField(max_length = 120)
     phone_number   = PhoneNumberField(allow_null = False, allow_blank = False)
     password       = serializers.CharField(min_length = 10)
 
