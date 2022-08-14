@@ -36,7 +36,7 @@ INSTALLED_APPS = [
 # * Specifies which kind of user models you are going to use or the kind of custom user model that you are going to use.
 AUTH_USER_MODEL = 'authentication.User'
 
-
+# * To set the error field to -> {error}
 REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY':'errors'
 }
