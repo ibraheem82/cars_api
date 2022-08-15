@@ -17,16 +17,25 @@ class UserCreationSerializer(serializers.ModelSerializer):
         fields = ['username', 'email', 'phone_number', 'password']
 
 
+
+
     def validate(self, attrs):
         username_exists = User.objects.filter(username = attrs['username']).exists()
+        
         if username_exists:
-            raise serializers.ValidationError(detail = "User with username exists")
+            raise serializers.ValidationError(detail="User with username exists")
         
         email_exists = User.objects.filter(username = attrs['email']).exists()
+        
         if email_exists:
-            raise serializers.ValidationError(detail = "User with email exists")
+            raise serializers.ValidationError(detail="User with email exists")
+        
         
         phonenumber_exists = User.objects.filter(username = attrs['phone_number']).exists()
+        
         if phonenumber_exists:
-            raise serializers.ValidationError(detail = "User with phonenumber exists")
+            raise serializers.ValidationError(detail="User with phonenumber exists")
+        
+        
+        
         return super().validate(attrs)
